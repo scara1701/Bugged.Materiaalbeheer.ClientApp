@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Ingenium.Materiaalbeheer.ClientApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Ingenium.Materiaalbeheer.ClientApp"
+    xmlns:controls="clr-namespace:Ingenium.Materiaalbeheer.ClientApp"
+    xmlns:icon="clr-namespace:Ingenium.Materiaalbeheer.ClientApp.Services"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutHeaderBehavior="CollapseOnScroll"
+    Title="Materiaalbeheer"
+    FlyoutBackgroundColor="AliceBlue"
+    >
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Aanmelden" ContentTemplate="{DataTemplate local:LoginPage}" Route="LoginPage"  Icon="{FontImage FontFamily=FA-S,Glyph={x:Static icon:IconFont.DoorOpen}}" />
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate local:HomePage}" Route="HomePage" x:Name="home" Icon="{FontImage FontFamily=FA-S,Glyph={x:Static icon:IconFont.House}}" />
+        <ShellContent Title="Gebruikers" ContentTemplate="{DataTemplate local:GebruikersPage}" Route="GebruikersPage" Icon="{FontImage FontFamily=FA-S,Glyph={x:Static icon:IconFont.Users}}" />
+        <ShellContent Title="Afdelingen" ContentTemplate="{DataTemplate local:AfdelingenPage}" Route="AfdelingenPage" Icon="{FontImage FontFamily=FA-S,Glyph={x:Static icon:IconFont.Building}}" />
+        <ShellContent Title="Typen" ContentTemplate="{DataTemplate local:TypenPage}" Route="TypenPage" Icon="{FontImage FontFamily=FA-S,Glyph={x:Static icon:IconFont.Tags}}" />
+        <ShellContent Title="Leveranciers" ContentTemplate="{DataTemplate local:LeverancierPage}" Route="LeverancierPage" Icon="{FontImage FontFamily=FA-S,Glyph={x:Static icon:IconFont.Warehouse}}" />
+    </FlyoutItem>
+    <ShellContent Title="Afmelden" Icon="{FontImage FontFamily=FA-S,Glyph={x:Static icon:IconFont.DoorClosed}}" />
+</Shell>
